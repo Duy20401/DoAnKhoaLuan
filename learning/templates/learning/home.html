@@ -1,0 +1,192 @@
+{% extends 'learning/base.html' %}
+{% load static %}
+
+{% block title %}Trang Chủ - ASL Learning{% endblock %}
+
+{% block content %}
+<!-- Hero Section - Fullscreen -->
+<section class="min-vh-100 d-flex align-items-center justify-content-center py-5 bg-light-gray">
+    <div class="container">
+        <div class="row align-items-center text-center text-lg-start">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <h1 class="display-1 fw-bold mb-4 text-dark">ASL LEARNING</h1>
+                <p class="lead mb-4">Học ngôn ngữ ký hiệu Mỹ một cách dễ dàng và thú vị với công nghệ AI hiện đại</p>
+                <p class="fs-5 mb-5 text-muted">Nhận diện ký hiệu tay thời gian thực + Phát âm tự động + Học tập tương tác</p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                    <a href="{% url 'practice_camera' %}" class="btn btn-primary btn-lg px-4 py-3 fw-bold">
+                        <i class="fas fa-camera me-2"></i>LUYỆN TẬP NGAY
+                    </a>
+                    <a href="{% url 'learn_alphabet' %}" class="btn btn-outline-primary btn-lg px-4 py-3">
+                        <i class="fas fa-font me-2"></i>HỌC CHỮ CÁI
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="hero-visual p-4">
+                    <i class="fas fa-hands fa-10x text-primary opacity-75 mb-4"></i>
+                    <div class="feature-badges">
+                        <span class="badge bg-primary fs-6 me-2 mb-2">AI Nhận Diện</span>
+                        <span class="badge bg-success fs-6 me-2 mb-2">Phát Âm</span>
+                        <span class="badge bg-warning fs-6 me-2 mb-2">Thời Gian Thực</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Actions Section -->
+<section class="py-5 bg-gray-background">
+    <div class="container py-4">
+        <div class="row text-center mb-4">
+            <div class="col">
+                <h2 class="display-3 fw-bold mb-3 text-dark">BẮT ĐẦU NGAY</h2>
+                <p class="lead text-muted">Lựa chọn phương pháp học tập phù hợp với bạn</p>
+            </div>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            <!-- Camera Practice - CÙNG CHIỀU CAO -->
+            <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card w-100 border-0 shadow transition-all text-center">
+                    <div class="card-body d-flex flex-column p-4" style="min-height: 420px;">
+                        <div class="text-primary mb-3 flex-shrink-0">
+                            <i class="fas fa-camera fa-5x"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3 text-dark flex-shrink-0">LUYỆN TẬP CAMERA</h3>
+                        <p class="fs-5 mb-4 text-muted flex-grow-1">Nhận diện ký hiệu tay thời gian thực với AI và phát âm tự động</p>
+                        <div class="flex-shrink-0">
+                            <a href="{% url 'practice_camera' %}" class="btn btn-primary btn-lg w-100 py-3">
+                                <i class="fas fa-play me-2"></i>BẮT ĐẦU
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Alphabet Learning - CÙNG CHIỀU CAO -->
+            <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card w-100 border-0 shadow transition-all text-center">
+                    <div class="card-body d-flex flex-column p-4" style="min-height: 420px;">
+                        <div class="text-success mb-3 flex-shrink-0">
+                            <i class="fas fa-font fa-5x"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3 text-dark flex-shrink-0">HỌC CHỮ CÁI</h3>
+                        <p class="fs-5 mb-4 text-muted flex-grow-1">Học bảng chữ cái ASL với hình ảnh minh họa và phát âm chi tiết</p>
+                        <div class="flex-shrink-0">
+                            <a href="{% url 'learn_alphabet' %}" class="btn btn-success btn-lg w-100 py-3">
+                                <i class="fas fa-book me-2"></i>HỌC NGAY
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vocabulary - CÙNG CHIỀU CAO -->
+            <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card w-100 border-0 shadow transition-all text-center">
+                    <div class="card-body d-flex flex-column p-4" style="min-height: 420px;">
+                        <div class="text-warning mb-3 flex-shrink-0">
+                            <i class="fas fa-comments fa-5x"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3 text-dark flex-shrink-0">TỪ VỰNG</h3>
+                        <p class="fs-5 mb-4 text-muted flex-grow-1">Mở rộng vốn từ với các từ và cụm từ thông dụng trong ASL</p>
+                        <div class="flex-shrink-0">
+                            <a href="{% url 'learn_words' %}" class="btn btn-warning btn-lg w-100 py-3">
+                                <i class="fas fa-language me-2"></i>KHÁM PHÁ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 bg-light-gray">
+    <div class="container py-5">
+        <div class="row text-center mb-5">
+            <div class="col">
+                <h2 class="display-3 fw-bold mb-3 text-dark">TÍNH NĂNG NỔI BẬT</h2>
+                <p class="lead text-muted">Công nghệ hiện đại hỗ trợ học tập hiệu quả</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Feature 1 - CÙNG CHIỀU CAO -->
+            <div class="col-md-4 d-flex">
+                <div class="card h-100 border-0 shadow-sm w-100">
+                    <div class="card-body text-center p-4 d-flex flex-column">
+                        <div class="text-primary mb-4 flex-shrink-0">
+                            <i class="fas fa-robot fa-4x"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3 text-dark flex-shrink-0">AI NHẬN DIỆN</h3>
+                        <p class="text-muted fs-5 flex-grow-1">Sử dụng trí tuệ nhân tạo để nhận diện ký hiệu tay thời gian thực với độ chính xác cao</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature 2 - CÙNG CHIỀU CAO -->
+            <div class="col-md-4 d-flex">
+                <div class="card h-100 border-0 shadow-sm w-100">
+                    <div class="card-body text-center p-4 d-flex flex-column">
+                        <div class="text-success mb-4 flex-shrink-0">
+                            <i class="fas fa-volume-up fa-4x"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3 text-dark flex-shrink-0">PHÁT ÂM TỰ ĐỘNG</h3>
+                        <p class="text-muted fs-5 flex-grow-1">Tự động đọc kết quả nhận diện giúp học phát âm và ghi nhớ tốt hơn</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature 3 - CÙNG CHIỀU CAO -->
+            <div class="col-md-4 d-flex">
+                <div class="card h-100 border-0 shadow-sm w-100">
+                    <div class="card-body text-center p-4 d-flex flex-column">
+                        <div class="text-warning mb-4 flex-shrink-0">
+                            <i class="fas fa-mobile-alt fa-4x"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3 text-dark flex-shrink-0">ĐA NỀN TẢNG</h3>
+                        <p class="text-muted fs-5 flex-grow-1">Tương thích với mọi thiết bị, từ máy tính đến điện thoại, học mọi lúc mọi nơi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 text-white">
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-4 fw-bold mb-4">SẴN SÀNG BẮT ĐẦU HÀNH TRÌNH?</h2>
+                <p class="fs-4 mb-5">Tham gia cộng đồng học ASL ngay hôm nay và khám phá thế giới ngôn ngữ ký hiệu đầy thú vị</p>
+                <a href="{% url 'practice' %}" class="btn btn-light btn-lg px-5 py-3 fs-3 fw-bold">
+                    <i class="fas fa-rocket me-2"></i>BẮT ĐẦU LUYỆN TẬP
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.transition-all {
+    transition: all 0.3s ease;
+}
+.transition-all:hover {
+    transform: translateY(-8px);
+}
+
+/* Đảm bảo các card cùng chiều cao */
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex: 1;
+}
+</style>
+{% endblock %}

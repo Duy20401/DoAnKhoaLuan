@@ -1,0 +1,30 @@
+{% extends 'learning/base.html' %}
+
+{% block title %}Học Chữ Cái - ASL Learning{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h1 class="fw-bold mb-4">Học Bảng Chữ Cái ASL</h1>
+            <p class="lead text-muted">Dữ liệu sẽ được cập nhật trong phiên bản tiếp theo</p>
+        </div>
+    </div>
+    
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="alert alert-info text-center">
+                <i class="fas fa-info-circle fa-2x mb-3"></i>
+                <h4>Tính năng đang được phát triển</h4>
+                <p class="mb-0">Chúng tôi đang hoàn thiện dữ liệu chữ cái ASL. Hiện tại bạn có thể sử dụng tính năng nhận diện với camera để luyện tập.</p>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="{% url 'practice_camera' %}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-camera me-2"></i>Luyện Tập Với Camera
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
