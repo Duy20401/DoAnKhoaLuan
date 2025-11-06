@@ -1,32 +1,33 @@
 # 🌳 Cấu trúc dự án
 ```
-project-root
-├─ app/
-│  ├─ Http/
-│  │  ├─ Controllers/    # nhận request → gọi service/model → trả response
-│  │  └─ Middleware/     # chặn/lọc request (auth, throttle...)
-│  ├─ Models/            # Eloquent (hasMany/belongsTo...)
-│  └─ Providers/         # đăng ký service, event, policy
-├─ bootstrap/            # boot + cache runtime
-├─ config/               # app.php, database.php, cache.php, mail.php, ...
-├─ database/
-│  ├─ migrations/        # tạo/sửa bảng
-│  ├─ seeders/           # dữ liệu mẫu
-│  └─ factories/         # dữ liệu giả (testing)
-├─ public/               # document root (index.php, assets Vite)
-├─ resources/
-│  ├─ views/             # Blade templates (.blade.php)
-│  ├─ js/                # front-end (Vite, ESM)
-│  └─ css/
-├─ routes/
-│  ├─ web.php            # web (session, CSRF, Blade)
-│  ├─ api.php            # API (stateless, prefix /api)
-│  ├─ console.php        # lệnh Artisan tự định nghĩa
-│  └─ channels.php       # broadcast channels
-├─ storage/
-│  ├─ app/               # vị dụ: app/public để lưu upload
-│  ├─ framework/         # cache view, sessions, routes, compiled
-│  └─ logs/              # laravel.log
-├─ tests/                # Feature/Unit tests
-└─ vendor/               # Composer packages
-```
+WEB/
+├── 📂 asLweb/ (Django Project)
+│   ├── settings.py - Cấu hình Django
+│   ├── urls.py - Routing chính
+│   └── wsgi.py, asgi.py - Deployment
+│
+├── 📂 learning/ (Django App chính)
+│   ├── 📂 templates/learning/ (Giao diện)
+│   │   ├── base.html - Template chính
+│   │   ├── home.html - Trang chủ
+│   │   ├── practice.html - Trang luyện tập chính
+│   │   ├── practice_camera.html - Nhận diện chữ cái
+│   │   └── practice_words_camera.html - Nhận diện từ vựng
+│   │
+│   ├── 📂 static/learning/ (Tài nguyên)
+│   │   ├── css/style.css - Styling
+│   │   ├── js/camera_real.js - Xử lý camera chữ cái
+│   │   └── js/words_camera.js - Xử lý camera từ vựng
+│   │
+│   ├── views.py - Xử lý request & logic
+│   ├── urls.py - Routing app
+│   ├── models.py - Database models (tùy chọn)
+│   ├── ai_recognizer.py - AI nhận diện chữ cái
+│   └── word_recognizer.py - AI nhận diện từ vựng
+│
+├── 📂 models/ (Thư mục model AI)
+│   ├── mobilenet_asl_v1_attention_focal.h5 - Model chữ cái
+│   └── asl_improved_finetuned.pth - Model từ vựng
+│
+├── manage.py - Quản lý Django
+└── requirements.txt - Dependencies
